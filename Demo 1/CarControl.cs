@@ -31,7 +31,7 @@ public class CarControl : MonoBehaviour
         transform.Rotate(Vector3.back * steerInput * MoveForce.magnitude * SteerAngle * Time.deltaTime);
 
         MoveForce *= Drag;
-        //MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed); // not sure what this is doing
+        // MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed); // not sure that I needed this after all
    
         MoveForce = Vector3.Lerp(MoveForce.normalized, transform.up, Traction * Time.deltaTime) * MoveForce.magnitude;
     }
